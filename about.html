@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - A STAR Truck School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+   
+    <link rel="shortcut icon" href="images/logo/logo.png" type="image/x-icon">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+     <!--Bootstrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+     <!--Font Awesome-->
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2e3d48;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h1 {
+            color: #ff6600;
+            font-size: 3rem;
+        }
+
+        .section-heading p {
+            color: #555;
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .two-column {
+                display: block;
+            }
+
+            .location-container {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            margin: 0 20px;
+        }
+
+        .about-text strong {
+            color: #ff6600;
+        }
+
+        /* Founder Message Section */
+        .founder-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .founder-message img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .founder-message .message-text {
+            max-width: 800px;
+        }
+
+        .founder-message h3 {
+            color: #ff6600;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .founder-message p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Location Section */
+        .location-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .location {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .location:hover {
+            transform: scale(1.05);
+        }
+
+        .location img {
+            border-radius: 10px;
+        }
+
+        .location h3 {
+            text-align: center;
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .location p {
+            text-align: center;
+            color: #777;
+        }
+
+        /* Button */
+        .location button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .location button:hover {
+            background-color: #ff4500;
+        }
+
+        /* Call-to-Action Section */
+        .call-to-action {
+            text-align: center;
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #ff6600;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-to-action h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6600;
+        }
+
+        @media screen and (max-width: 700px) {
+            .location-container {
+            flex-direction: column;
+        }
+
+        .location:last-child {
+            margin-top: 30px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        <marquee>
+            "Accomodation is Provided – Enroll Now!" | "Get Your Commercial License in Just 15 Days!" |"Branches in Utah and California | Join the A STAR Family!" | "Fast-Track Your Trucking Career Today!" |"Limited Seats Available – Apply Now and Secure Your Spot!" | "Transform Your Passion for Driving into a High-Paying Career!"
+    
+        </marquee>
+    </div>
+        
+        <!--Top Nav-->
+        <div class="top-nav">
+            <div class="top-left">
+              <a href="index.html">  <img src="images/logo/logo.png" alt="logo"> </a>
+            </div>
+            <div class="top-right">
+                <a href="tel:+1 435-800-0111"><button><i class="fa-solid fa-phone"></i>+1 435-800-0111</button></a>
+            </div>
+         </div>
+    
+    
+         <nav>
+            <div class="navbar">
+              <i class='bx bx-menu'></i>
+              <div class="logo"><a href="index.html">A STAR School</a></div>
+              <div class="nav-links">
+                <div class="sidebar-logo">
+                  <span class="logo-name">A STAR School</span>
+                  <i class='bx bx-x' ></i>
+                </div>
+                <ul class="links">
+                  <li><a href="index.html">HOME</a></li>
+                  <li>
+                    <a href="index.html#services">CDL TRAINING</a>
+                    <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                    <ul class="htmlCss-sub-menu sub-menu">
+                        <li><a href="service-details.html?service=cdl-a">CDL Class A Training</a></li>
+                        <li><a href="service-details.html?service=cdl-b">CDL Class B Training</a></li>
+                        <li><a href="service-details.html?service=eldt">Entry Level Training</a></li>
+                      
+                      <!--
+                      <li class="more">
+                        <span><a href="#">More</a>
+                        <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                      </span>
+                        <ul class="more-sub-menu sub-menu">
+                          <li><a href="#">Neumorphism</a></li>
+                          <li><a href="#">Pre-loader</a></li>
+                          <li><a href="#">Glassmorphism</a></li>
+                        </ul>
+                      </li>  -->
+                    </ul>
+                  </li>
+                 
+                  <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="index.html#reviews">REVIEWS</a></li>
+                  <li><a href="contact.html">CONTACT</a></li>
+                 
+                </ul>
+              </div>
+            
+            </div>
+          </nav>
+
+    <!-- About Section -->
+    <section class="fade-in">
+        <div class="section-heading">
+            <h1>Welcome to A STAR Truck School</h1>
+            <p>Driving Success, One Student at a Time</p>
+        </div>
+
+        <div class="about-text">
+            <p><strong>A STAR Truck School</strong> is a leading driving school dedicated to providing top-notch training for aspiring truck drivers. We offer comprehensive training that prepares students for a successful career on the road. Our programs are designed to ensure you have the knowledge and hands-on experience needed to pass your CDL exam and be job-ready.</p>
+
+            <p>We take pride in offering an immersive learning experience with both theoretical lessons and practical driving skills, ensuring students are well-prepared for real-world challenges.</p>
+        </div>
+    </section>
+
+    <!-- Message from the Founder Section -->
+    <section class="founder-message fade-in">
+        <img src="images/about/founder.png" alt="Founder Image">
+        <div class="message-text">
+            <h3>A Message from Our Founder</h3>
+            <p>"At A STAR Truck School, we believe in providing the best training for those looking to start or advance their trucking career. We are committed to your success, and we ensure that every student is equipped with the skills they need to drive safely and responsibly on the road. Join us, and let's drive your future forward!"</p>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="fade-in">
+        <div class="section-heading">
+            <h2>Our Locations</h2>
+            <p>We have two convenient locations to serve you better.</p>
+        </div>
+
+        <div class="location-container">
+            <!-- Location 1 -->
+            <div class="location">
+                <img src="location1.jpg" alt="Location 1">
+                <h3>Main Branch - [City]</h3>
+                <p>Located in [City], this is where we provide all our programs, from CDL training to refresher courses.</p>
+              <a href="contact.html">  <button>Schedule a Tour</button> </a>
+            </div>
+
+            <!-- Location 2 -->
+            <div class="location">
+                <img src="location2.jpg" alt="Location 2">
+                <h3>Second Branch - [City]</h3>
+                <p>Our second location offers flexible hours and the same high-quality training as our main branch.</p>
+              <a href="contact.html"> <button>Schedule a Tour</button> </a> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h3>Ready to Start Your Trucking Career?</h3>
+        <p>Contact us today to schedule a tour or enroll in one of our programs!</p>
+      <a href="contact.html"> <button class="cta-button">Get Started</button> </a> 
+    </section>
+
+    <!-- Fixed button -->
+    <a href="contact.html"><button class="book-appointment-btn">
+        Book an Appointment
+      </button> </a>
+
+    <!--Contact Section-->
+
+     <div class="contact row">
+    <div class="contact-left col-md-12">
+      <img src="images/services/contact.png" class="im">
+      
+  
+  
+  <!--Map Section-->
+  
+  <section id="map-section">
+    <h2>Our Location</h2>
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.52038013738!2d-112.3434207!3d40.530091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752bbea95c925c7%3A0x561392a846d059db!2sA%20Star%20Truck%20Training%20School!5e0!3m2!1sen!2sin!4v1737191985125!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+  </section>
+  
+  
+ <!--Footer Section-->
+<footer class="footer bg-danger">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 mt-4 col-lg-3 text-center text-sm-start">
+                <div class="information">
+                    <h6 class="footer-heading text-uppercase text-white fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li class="mb-1"><a href="about.html" class="text-white text-decoration-none fw-semibold">About</a></li>
+                        <li class="mb-1"><a href="index.html#services" class="text-white text-decoration-none fw-semibold">CDL Training</a></li>
+                        <li class="mb-1"><a href="index.html#reviews" class="text-white text-decoration-none fw-semibold">Reviews</a></li>
+                        <li class=""><a href="contact.html" class="text-white text-decoration-none fw-semibold">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="col-sm-6 col-md-4 mt-4 col-lg-2 text-center text-sm-start">
+              <div class="social">
+                  <h6 class="footer-heading text-uppercase text-white fw-bold">Social</h6>
+                  <ul class="list-inline my-4">
+                    <li class="list-inline-item"><a href="#" class="text-white btn-sm btn btn-primary mb-2"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-danger btn-sm btn btn-light mb-2"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white btn-sm btn btn-primary mb-2"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white btn-sm btn btn-success mb-2"><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+              </div>
+          </div>
+            <div class="col-sm-6 col-md-6 mt-4 col-lg-4 text-center text-sm-start">
+              <div class="contact">
+                  <h6 class="footer-heading text-uppercase text-white fw-bold">Contact Us</h6>
+                  <address class="mt-4 m-0 text-white mb-1"><i class="fa-solid fa-map-pin"></i> 1736 H Ave, Tooele, UT 84074</address>
+                  <a href="tel:+1 979-900-6669" class="text-white mb-1 text-decoration-none d-block fw-semibold"><i class="fa-solid fa-phone"></i> +1 979-900-6669</a>
+                  <a href="mailto:" class="text-white mb-1 text-decoration-none d-block fw-semibold"><i class="fa-solid fa-envelope"></i> xyzdemomail@gmail.com</a>
+                 
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center bg-dark text-white mt-4 p-1">
+        <p class="mb-0 fw-bold">2025 © A STAR Truck School, All Rights Reserved</p>
+       <a href="mailto: aeshgoswamiwd@gmail.com" style="text-decoration: none; color: white;"> <p style="font-size: 0.6rem;">Developer by Aesh Goswami</p> </a>
+    </div>
+  </footer>
+    
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+</html>

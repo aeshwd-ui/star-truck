@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | A STAR Truck School</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="shortcut icon" href="images/logo/logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="marquee">
+        <marquee>
+            "Accomodation is Provided – Enroll Now!" | "Get Your Commercial License in Just 15 Days!" |"Branches in Utah and California | Join the A STAR Family!" | "Fast-Track Your Trucking Career Today!" |"Limited Seats Available – Apply Now and Secure Your Spot!" | "Transform Your Passion for Driving into a High-Paying Career!"
+    
+        </marquee>
+    </div>
+        
+        <!--Top Nav-->
+        <div class="top-nav">
+            <div class="top-left">
+              <a href="index.html">  <img src="images/logo/logo.png" alt="logo"> </a>
+            </div>
+            <div class="top-right" style="margin-right: 10px;">
+                <a href="tel:+1 435-800-0111"><button><i class="fa-solid fa-phone"></i>+1 435-800-0111</button></a>
+            </div>
+         </div>
+    
+    
+         
+    <div id="service-details">
+        <!-- Dynamic content will be injected here -->
+    </div>
+
+    <div class="but">
+        <a href="contact.html">
+            <button>Contact Us</button>
+        </a>
+    </div>
+
+
+    
+    <!-- Fixed button -->
+    <a href="contact.html"><button class="book-appointment-btn">
+        Book an Appointment
+      </button> </a>
+
+  <!--Footer Section-->
+  <div class="footer" style="background-color: black; color: white; font-family: sans-serif; text-align: center;padding: 10px;">
+    <h3>2025 © A STAR Truck School, All Rights Reserved</h3>
+  </div>
+
+    <script>
+      const serviceData = {
+          "cdl-a": {
+              name: "CDL Class A Training",
+              description: `
+                Our CDL Class A Training program is designed for individuals aspiring to operate heavy-duty vehicles, such as tractor-trailers and tankers. 
+                This comprehensive 15-day program combines classroom sessions and hands-on training to ensure you master the skills required to ace the CDL exam. 
+                Key topics include road safety, vehicle inspection, cargo handling, and advanced driving techniques. By the end of the course, you'll be prepared 
+                for a lucrative trucking career with high earning potential.
+              `,
+              ageRequirement: "21+ years",
+              documents: [
+                  "Valid Driver’s License",
+                  "Medical Examination Report",
+                  "Proof of Residency",
+                  "Social Security Card"
+              ],
+              additionalInfo: `
+                Graduates of this program enjoy opportunities in interstate trucking, oil and gas transportation, and logistics industries. 
+                Flexible payment plans and weekend classes are available to suit your schedule. Our instructors have decades of experience in CDL training 
+                and are committed to your success.
+              `,
+              image: "images/services/class b.png"
+          },
+          "cdl-b": {
+              name: "CDL Class B Training",
+              description: `
+                CDL Class B Training is tailored for individuals who want to operate medium-sized commercial vehicles such as buses, box trucks, and dump trucks. 
+                This program focuses on vehicle control, safety regulations, and route planning to help you meet your career goals. With industry-standard equipment 
+                and real-world scenarios, you'll gain the confidence to excel as a Class B commercial driver.
+              `,
+              ageRequirement: "18+ years",
+              documents: [
+                  "Valid Driver’s License",
+                  "Proof of Address",
+                  "Social Security Card",
+                  "Medical Certificate"
+              ],
+              additionalInfo: `
+                Job placement assistance is provided for graduates, with a strong network of employers in public transportation, waste management, and delivery services. 
+                Accelerated programs are available for those with prior driving experience.
+              `,
+              image: "images/services/class b.png"
+          },
+          "eldt": {
+              name: "Entry Level Driver Training (ELDT)",
+              description: `
+                Our Entry Level Driver Training (ELDT) program equips aspiring drivers with the foundational knowledge required to start a career in trucking. 
+                This program meets federal training standards and covers essential topics such as road safety, basic vehicle control, and federal regulations. 
+                Hands-on practice and personalized coaching ensure you're ready to take the next step in your trucking journey.
+              `,
+              ageRequirement: "18+ years",
+              documents: [
+                  "Driver’s License",
+                  "ELDT Certificate of Completion",
+                  "Medical Exam Certificate",
+                  "Proof of Residency"
+              ],
+              additionalInfo: `
+                This program is ideal for beginners looking to fulfill federal ELDT requirements. Our flexible class schedules allow you to balance training with your existing commitments. 
+                With a 90% pass rate, we ensure your success is our priority.
+              `,
+              image: "images/services/entry.png"
+          }
+      };
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceId = urlParams.get("service");
+      const service = serviceData[serviceId];
+
+      if (service) {
+          document.getElementById("service-details").innerHTML = `
+              <section class="service-detail">
+                  <h1>${service.name}</h1>
+                  <div class="service-content">
+                      <img src="${service.image}" alt="${service.name}" class="service-image" />
+                      <div class="service-description">
+                          <p>${service.description}</p>
+                          <h3>Age Requirement</h3>
+                          <p>${service.ageRequirement}</p>
+                          <h3>Documents Needed</h3>
+                          <ul>
+                              ${service.documents.map(doc => `<li>${doc}</li>`).join("")}
+                          </ul>
+                          <h3>Additional Information</h3>
+                          <p>${service.additionalInfo}</p>
+                      </div>
+                  </div>
+              </section>
+          `;
+      } else {
+          document.getElementById("service-details").innerHTML = `<p>Service not found!</p>`;
+      }
+    </script>
+</body>
+</html>
